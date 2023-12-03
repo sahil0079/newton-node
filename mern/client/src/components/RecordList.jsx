@@ -8,7 +8,7 @@ function Record(props) {
             <td>{props.record.position} </td>
             <td>{props.record.level} </td>
             <td>
-                <Link className='btn btn-link'>Edit</Link>
+                <Link className='btn btn-link' to={`/edit/${props.record._id}`}  >Edit</Link>
                 <button onClick={() => {
                     props.deleteRecord(props.record._id)
                 }} className='btn btn-link'>Delete</button>
