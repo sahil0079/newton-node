@@ -6,6 +6,7 @@ const cors = require('cors');
 const dotenv = require('dotenv');
 
 const authRoute = require('../routes/auth');
+const blogsRoute = require('../routes/blogs');
 
 dotenv.config();
 const app = express();
@@ -33,6 +34,9 @@ app.get('/', (req, res) => {
 })
 
 app.use('/api/auth', authRoute);
+app.use('/api/blogs', blogsRoute);
+
+
 
 
 

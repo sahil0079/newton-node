@@ -1,8 +1,9 @@
 const express = require('express');
 
 const User = require('../models/User');
-const { createUser } = require('../controllers/auth');
+const { createUser, loginUser } = require('../controllers/auth');
 const { validateUserRegister } = require('../middlewares/validateUserRegister');
+const { validateUserLogin } = require('../middlewares/validateUserLogin');
 const router = express.Router();
 
 
@@ -13,7 +14,7 @@ router.post('/createuser', validateUserRegister, createUser)
 
 //create a new user http://localhost:8080/api/auth/login
 
-router.post('/login')
+router.post('/login', validateUserLogin, loginUser)
 
 //create a new user http://localhost:8080/api/auth/getUser
 
