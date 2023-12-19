@@ -7,6 +7,8 @@ const dotenv = require('dotenv');
 
 const authRoute = require('../routes/auth');
 const blogsRoute = require('../routes/blogs');
+const profileRoute = require('../routes/profileBlogs');
+const tagsRoute = require('../routes/tagsRoute');
 
 dotenv.config();
 const app = express();
@@ -35,6 +37,9 @@ app.get('/', (req, res) => {
 
 app.use('/api/auth', authRoute);
 app.use('/api/blogs', blogsRoute);
+app.use('/api/profile', profileRoute);
+app.use('/api/tags', tagsRoute);
+
 
 
 

@@ -1,5 +1,5 @@
 const express = require('express');
-const { addBlog } = require('../controllers/blogs');
+const { addBlog, fetchAllBlogs } = require('../controllers/blogs');
 const { validateNewBlog } = require('../middlewares/validateNewBlog');
 const { fetchUser } = require('../middlewares/fetchUser');
 
@@ -8,7 +8,7 @@ const router = express.Router();
 
 //getting all blogs http://localhost:8080/api/blogs
 
-router.get('/');
+router.get('/', fetchAllBlogs);
 
 
 
